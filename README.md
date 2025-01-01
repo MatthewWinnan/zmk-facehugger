@@ -1,3 +1,32 @@
+# Introduction
+
+The following is a fork from Zephyr™ Mechanical Keyboard (ZMK) Firmware taken at
+commit 3f6841c95ff9a82658576828895ebcba1b0a5f86.
+
+ZMK-CONFIG contains all the config files for my boards, currently I have the
+[Kyria v3](https://splitkb.com/products/kyria-rev3?srsltid=AfmBOorhClEbHRVbltb91rraPOLW9f0kI1bEfEyJ_WuGiZBzGlFUNtAQ) at the configurations only address it.
+
+## Building
+
+For a general guide on how to build without using the GitHub actions please refer to [ZMK Building Flashing](https://zmk.dev/docs/development/local-toolchain/build-flash(https://zmk.dev/docs/development/local-toolchain/build-flash).
+
+My current process involves:
+
+```
+west build -s app/ -d build/right -b nice_nano_v2 -- -DSHIELD="kyria_rev3_right nice_view_adapter nice_view" -DZMK_CONFIG="zmk-config/config"
+```
+
+Keep in mind if building a new board or making changing like a new shield to include the pristine flag [(1)](https://zmk.dev/docs/development/local-toolchain/build-flash#pristine-building)
+
+## Build Environment
+
+My build environment is managed by NIX, please refer to my repo for the shell environment [ZEPHER ENV](https://github.com/MatthewWinnan/nixos-configs/tree/master/shells/zypher)
+
+This is invoked using [direnv](https://direnv.net/) and including the following lines within the .envrc file:
+`use flake /path/to/flakes#zypher`
+
+Then use `direnv allow` to create the development environment within NIX.
+
 # Zephyr™ Mechanical Keyboard (ZMK) Firmware
 
 [![Discord](https://img.shields.io/discord/719497620560543766)](https://zmk.dev/community/discord/invite)
