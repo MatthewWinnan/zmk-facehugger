@@ -9,5 +9,6 @@ manifest:
       remote: zmkfirmware
       revision: main
       import: app/west.yml
+
   self:
     path: config
