@@ -26,7 +26,8 @@ For a general guide on how to build without using the GitHub actions please refe
 My current process involves:
 
 ```
-west build -s app/ -d build/right -b nice_nano_v2 -- -DSHIELD="kyria_rev3_right nice_view_adapter nice_view" -DZMK_CONFIG="zmk-config/config"
+west build -p -d build/left -b nice_nano_v2 -- -DSHIELD="kyria_rev3_left nice_view_adapter kyria_nice_view" -DZMK_CONFI
+G="/home/matthew/ZYPHER/zmk-facehugger/kyriaV3-config/config"
 ```
 
 Keep in mind if building a new board or making changing like a new shield to include the pristine flag [(1)](https://zmk.dev/docs/development/local-toolchain/build-flash#pristine-building)
