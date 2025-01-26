@@ -6,6 +6,8 @@ manifest:
       url-base: https://github.com/zmkfirmware
     - name: nice-view-kyria
       url-base: https://github.com/MatthewWinnan
+    - name: urob
+      url-base: https://github.com/urob
   projects:
     - name: zephyr
       remote: zmkfirmware
@@ -39,6 +41,9 @@ manifest:
       revision: 6cb4c283e76209d59c45fbcb218800cd19e9339d
       path: modules/msgs/zmk-studio-messages
       remote: zmkfirmware
+    - name: zmk-auto-layer
+      remote: urob
+      revision: main
 
         # My custom nice view for the kyria
     - name: kyria_nice_view
