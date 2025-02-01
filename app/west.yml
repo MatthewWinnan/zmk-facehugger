@@ -1,14 +1,20 @@
 manifest:
   remotes:
+
     - name: zephyrproject-rtos
       url-base: https://github.com/zephyrproject-rtos
+
     - name: zmkfirmware
       url-base: https://github.com/zmkfirmware
-    - name: nice-view-kyria
+
+    - name: MatthewWinnan
       url-base: https://github.com/MatthewWinnan
+
     - name: urob
       url-base: https://github.com/urob
+
   projects:
+
     - name: zephyr
       remote: zmkfirmware
       revision: v3.5.0+zmk-fixes
@@ -33,22 +39,32 @@ manifest:
           - openthread
           - edtt
           - trusted-firmware-m
+
     - name: nanopb
       revision: 8c60555d6277a0360c876bd85d491fc4fb0cd74a
       path: modules/lib/nanopb
       remote: zmkfirmware
+
     - name: zmk-studio-messages
       revision: 6cb4c283e76209d59c45fbcb218800cd19e9339d
       path: modules/msgs/zmk-studio-messages
       remote: zmkfirmware
+
     - name: zmk-auto-layer
       remote: urob
+      path: modules/zmk-auto-layer
       revision: main
 
-        # My custom nice view for the kyria
+    # My custom nice view for the kyria
     - name: kyria_nice_view
-      remote: nice-view-kyria
-      path: app/boards/shields/nice-view-kyria
+      remote: MatthewWinnan
+      path: app/boards/shields/kyria_nice_view
+      revision: main
+
+    # My Kyria Config
+    - name: kyria_zmk_config
+      remote: MatthewWinnan
+      path: config/kyria_zmk_config
       revision: main
 
   self:
