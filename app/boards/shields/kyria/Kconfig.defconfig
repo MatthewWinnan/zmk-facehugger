@@ -7,7 +7,22 @@ config ZMK_KEYBOARD_NAME
 config ZMK_SPLIT_ROLE_CENTRAL
     default y
 
+# Send HID indicator to peripherals
+config ZMK_SPLIT_PERIPHERAL_HID_INDICATORS
+    default y
+
 endif # End for the left role
+
+if SHIELD_KYRIA_RIGHT || SHIELD_KYRIA_REV2_RIGHT || SHIELD_KYRIA_REV3_RIGHT
+
+# Send HID indicator to peripherals
+config ZMK_SPLIT_PERIPHERAL_HID_INDICATORS
+    default y
+
+config ZMK_HID_INDICATORS
+    default y
+
+endif # End for the Right role
 
 if SHIELD_KYRIA
 
